@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Wolfpack</title>
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <link href="css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <main class="main main--black">
+    <div class="home__body">
+      <div class="home__links">
+        <a href="#" class="big-link" data-popup-trigger="dens">Dens.</a>
+        <a href="beers.html" class="big-link">Beer.</a>
+        <a href="#" class="big-link" data-popup-trigger="map">Map.</a>
+        <a href="about.html" class="big-link">About.</a>
+      </div>
+      <div class="home__inst-text">follow <a href="https://instagram.com/wolfpacklager" target="_blank" class="main__inst-text-span">@wolfpacklager</a>
+      </div>
+    </div>
+
+    <div class="popup" data-popup-content="dens">
+      <div class="popup__content">
+        <div class="img-card">
+          <img src="images/dens-main.png" loading="lazy" srcset="images/dens-main-p-500.png 500w, images/dens-main-p-800.png 800w, images/dens-main.png 948w" sizes="100vw" alt="" class="img-card__img">
+          <div class="img-card__dens-img">
+            <img src="images/dens-bg.png" loading="lazy" width="441" srcset="images/dens-bg-p-500.png 500w, images/dens-bg.png 882w" sizes="100vw" alt="">
+          </div>
+          <div class="img-card__button">
+            <a href="the-dens.html" class="button-offer">
+              <div class="button-offer__txt">View dens</div>
+            </a>
+          </div>
+        </div>
+        <div class="popup__close" data-popup-close="">CLOSE X</div>
+      </div>
+      <div class="popup__overlay" data-popup-close=""></div>
+    </div>
+
+    <div class="popup" data-popup-content="map">
+      <div class="popup__content">
+        <div class="img-card"><img src="images/map.png" loading="lazy" srcset="images/map-p-500.png 500w, images/map-p-800.png 800w, images/map-p-1080.png 1080w, images/map.png 1918w" sizes="100vw" alt="" class="img-card__img">
+          <div class="img-card__map-buttons">
+            <div class="img-card__map-button-wrapper icmbw-1">
+              <a href="map.html" class="img-card__map-button"></a>
+            </div>
+            <div class="img-card__map-button-wrapper icmbw-2">
+              <a href="map.html" class="img-card__map-button"></a>
+            </div>
+            <div class="img-card__map-button-wrapper icmbw-3">
+              <a href="map.html" class="img-card__map-button"></a>
+            </div>
+            <div class="img-card__map-button-wrapper icmbw-4">
+              <a href="map.html" class="img-card__map-button"></a>
+            </div>
+          </div>
+          <div class="img-card__button img-card__button--map">
+            <a href="map.html" class="button-offer black">
+              <div class="button-offer__txt">View map</div>
+            </a>
+          </div>
+        </div>
+        <div class="popup__close" data-popup-close="">CLOSE X</div>
+      </div>
+      <div class="popup__overlay" data-popup-close=""></div>
+    </div>
+
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $('[data-popup-trigger]').click(function() {
+        const popupName = $(this).data().popupTrigger
+
+        $(`[data-popup-content=${popupName}]`).css('display', 'flex')
+      })
+
+      $('[data-popup-close]').click(function() {
+        $(`[data-popup-content]`).fadeOut(200)
+      })
+    })
+  </script>
+</body>
+</html>
